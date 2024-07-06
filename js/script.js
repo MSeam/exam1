@@ -1,5 +1,4 @@
 let task = document.querySelector('.first');
-// let importance = document.querySelector('.second');
 let btn = document.querySelector('.submit');
 let update = document.querySelector('.update');
 let ul = document.querySelector('ul');
@@ -21,7 +20,6 @@ btn.addEventListener('click', function () {
   }
   all.push({
     task: task.value,
-    // importance: importance.value,
   });
   display();
 });
@@ -37,7 +35,6 @@ function display() {
     let editBtn = document.querySelectorAll('.edit');
     let editBtnArr = Array.from(editBtn);
 
-
     deleteBtnArr.map((singleButton, dltindex) => {
       singleButton.addEventListener('click', function () {
         all.splice(dltindex, 1);
@@ -51,9 +48,6 @@ function display() {
         task.value = all[editindex].task;
         update.style.display = 'inline-block';
         btn.style.display = 'none';
-
-        // all.splice(editindex, 1);
-        // display();
       });
     });
   });
